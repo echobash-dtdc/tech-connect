@@ -18,7 +18,6 @@
     <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
         <div class="min-h-screen flex flex-col">
             <!-- Top Navigation -->
-            <!-- include('layouts.navigation')  -->
 
             <!-- Sidebar + Main Content -->
             <div class="flex flex-1">
@@ -36,9 +35,10 @@
                         </header>
                     @endisset
 
-                    <!-- Main Content -->
                     <main class="p-6">
-                        @yield('content')
+                        <div class="max-w-7xl mx-auto px-4">
+                            @yield('content')
+                        </div>
                     </main>
                 </div>
             </div>
