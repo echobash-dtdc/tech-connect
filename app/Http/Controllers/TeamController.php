@@ -35,7 +35,8 @@ class TeamController extends Controller
     {
         $departments = \App\Models\Department::all();
         $teamMembers = \App\Models\TeamMember::all();
-        return view('team.create', compact('departments', 'teamMembers'));
+        $teams = \App\Models\Team::all(); // Add this line
+        return view('team.create', compact('departments', 'teamMembers', 'teams'));
     }
 
     public function store(Request $request)

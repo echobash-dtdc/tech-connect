@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('blog', BlogController::class);
     // Team CRUD
     Route::resource('team', TeamController::class);
+    // Add route for AJAX team fetching by department
+    Route::get('/team/get-teams/{departmentId}', [TeamController::class, 'getTeams']);
 });
 
 // Homepage
@@ -73,4 +75,4 @@ Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show'
 Route::get('/innovation', [InnovationController::class, 'index'])->name('innovation.index');
 Route::get('/innovation/{id}', [InnovationController::class, 'show'])->name('innovation.show');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

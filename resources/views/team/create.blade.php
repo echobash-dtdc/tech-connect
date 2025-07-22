@@ -34,6 +34,9 @@
                 <label for="team_id" class="block font-semibold mb-1">Team</label>
                 <select class="w-full border border-gray-300 rounded px-3 py-2" id="team_id" name="team_id">
                     <option value="">Select Team</option>
+                    @foreach($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div>
