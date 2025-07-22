@@ -14,10 +14,7 @@
             <label for="author_id" class="block font-semibold mb-1">Author (Team Member ID)</label>
             <input type="number" class="w-full border border-gray-300 rounded px-3 py-2" id="author_id" name="author_id" value="{{ old('author_id', $post->author_id) }}" required>
         </div>
-        <div>
-            <label for="content" class="block font-semibold mb-1">Content</label>
-            <textarea class="w-full border border-gray-300 rounded px-3 py-2" id="content" name="content" required>{{ old('content', $post->content) }}</textarea>
-        </div>
+        <x-markdown-editor name="content" :value="old('content', $post->content)" />
         <div>
             <label for="category" class="block font-semibold mb-1">Category</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="category" name="category" value="{{ old('category', $post->category) }}" required>
@@ -31,7 +28,7 @@
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="featured_image" name="featured_image" value="{{ old('featured_image', $post->featured_image) }}">
         </div>
         <div>
-            <label for="status" class="block font-semibold mb-1">Status</label>
+            <label for="status" class="block font-semibold mb-1">Statusasd</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="status" name="status" value="{{ old('status', $post->status) }}">
         </div>
         <div>
@@ -57,16 +54,3 @@
     </form>
 </div>
 @endsection
-
-@push('styles')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-@endpush
-
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new SimpleMDE({ element: document.getElementById('content') });
-        });
-    </script>
-@endpush 

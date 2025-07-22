@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = BlogPost::where('status', 'Published')->orderBy('publish_date', 'desc')->paginate(10);
+        $posts = BlogPost::orderBy('publish_date', 'desc')->paginate(10);
         return view('blog.index', compact('posts'));
     }
 
