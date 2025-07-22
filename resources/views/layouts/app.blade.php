@@ -19,6 +19,8 @@
         <div class="min-h-screen flex flex-col">
             <!-- Top Navigation -->
 
+            <x-top-banner />
+
             <!-- Sidebar + Main Content -->
             <div class="flex flex-1">
                 <!-- Sidebar -->

@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="w-full">
-    <x-top-banner />
     {{-- Welcome + News --}}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 px-4">
         <div class="bg-blue-900 text-white text-center py-6 rounded">
