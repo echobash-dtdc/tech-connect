@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/team/get-teams/{departmentId}', [TeamController::class, 'getTeams']);
+    Route::get('/team/hierarchy', [TeamController::class, 'hierarchy'])->name('team.hierarchy');
 
     // Projects CRUD
     Route::get('/projects/create', [ProjectsController::class, 'create'])->name('projects.create');
@@ -85,4 +87,4 @@ Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.in
 Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
