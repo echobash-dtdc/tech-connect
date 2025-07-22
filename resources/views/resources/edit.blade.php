@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto px-4 py-6 max-w-2xl">
+<div class="container mx-auto px-4 py-6">
     <h1 class="text-2xl font-bold mb-4">Edit Resource</h1>
     <form action="{{ route('resources.update', $resource->id) }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
         @csrf
@@ -14,18 +14,12 @@
             <label for="type" class="block font-semibold mb-1">Type</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="type" name="type" value="{{ old('type', $resource->type) }}" required>
         </div>
-        <div>
-            <label for="description" class="block font-semibold mb-1">Description</label>
-            <textarea class="w-full border border-gray-300 rounded px-3 py-2" id="description" name="description">{{ old('description', $resource->description) }}</textarea>
-        </div>
+        <x-markdown-editor name="description" :value="old('description', $resource->description)" />
         <div>
             <label for="url" class="block font-semibold mb-1">URL</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="url" name="url" value="{{ old('url', $resource->url) }}">
         </div>
-        <div>
-            <label for="access_instructions" class="block font-semibold mb-1">Access Instructions</label>
-            <textarea class="w-full border border-gray-300 rounded px-3 py-2" id="access_instructions" name="access_instructions">{{ old('access_instructions', $resource->access_instructions) }}</textarea>
-        </div>
+        <x-markdown-editor name="access_instructions" :value="old('access_instructions', $resource->access_instructions)" />
         <div>
             <label for="owner_team_id" class="block font-semibold mb-1">Owner Team (Team Member ID)</label>
             <input type="number" class="w-full border border-gray-300 rounded px-3 py-2" id="owner_team_id" name="owner_team_id" value="{{ old('owner_team_id', $resource->owner_team_id) }}">

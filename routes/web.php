@@ -24,12 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Projects CRUD
-    Route::get('/projects/create', [ProjectsController::class, 'create'])->name('projects.create');
-    Route::post('/projects', [ProjectsController::class, 'store'])->name('projects.store');
-    Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
-    Route::put('/projects/{id}', [ProjectsController::class, 'update'])->name('projects.update');
-    Route::delete('/projects/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
 
     // HomepageContent CRUD
     Route::get('/homepage-content', [HomepageController::class, 'contentIndex'])->name('homepage-content.index');
@@ -46,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('innovation', InnovationController::class);
     // Events CRUD
     Route::resource('events', EventController::class);
+    // Projects CRUD
+    Route::resource('projects', ProjectsController::class);
     // Resources CRUD
     Route::resource('resources', ResourceController::class);
     // Blog CRUD
@@ -57,9 +53,6 @@ Route::middleware('auth')->group(function () {
 // Homepage
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
-// Projects
-Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index');
-Route::get('/projects/{id}', [ProjectsController::class, 'show'])->name('projects.show');
 
 // Teams
 Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
