@@ -22,10 +22,7 @@
             <label for="title" class="block font-semibold mb-1">Title</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="title" name="title">
         </div>
-        <div>
-            <label for="content" class="block font-semibold mb-1">Content</label>
-            <textarea class="w-full border border-gray-300 rounded px-3 py-2" id="content" name="content"></textarea>
-        </div>
+        <x-markdown-editor name="content" :value="old('content')" />
         <div>
             <label for="image_icon" class="block font-semibold mb-1">Image/Icon</label>
             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" id="image_icon" name="image_icon">
