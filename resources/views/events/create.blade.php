@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto px-4 py-6 max-w-2xl">
+<div class="container mx-auto px-4 py-6">
     <h1 class="text-2xl font-bold mb-4">Create Event</h1>
     <form action="{{ route('events.store') }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
         @csrf
@@ -19,10 +19,7 @@
                 <option value="Release">Release</option>
             </select>
         </div>
-        <div>
-            <label for="description" class="block font-semibold mb-1">Description</label>
-            <textarea class="w-full border border-gray-300 rounded px-3 py-2" id="description" name="description"></textarea>
-        </div>
+        <x-markdown-editor name="description" :value="old('description')" />
         <div>
             <label for="date_time" class="block font-semibold mb-1">Date & Time</label>
             <input type="datetime-local" class="w-full border border-gray-300 rounded px-3 py-2" id="date_time" name="date_time" required>

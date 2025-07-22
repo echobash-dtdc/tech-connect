@@ -18,12 +18,12 @@
     <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900">
         <div class="min-h-screen flex flex-col">
             <!-- Top Navigation -->
-            <!-- include('layouts.navigation')  -->
+
+            <x-top-banner />
 
             <!-- Sidebar + Main Content -->
             <div class="flex flex-1">
                 <!-- Sidebar -->
-                @include('layouts.sidebar')
 
                 <!-- Main Page -->
                 <div class="flex-1">
@@ -36,8 +36,7 @@
                         </header>
                     @endisset
 
-                    <!-- Main Content -->
-                    <main class="p-6">
+                    <main class="max-w-7xl mx-auto px-4 py-6">
                         @yield('content')
                     </main>
                 </div>

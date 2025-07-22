@@ -26,12 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/team/get-teams/{departmentId}', [TeamController::class, 'getTeams']);
     Route::get('/team/hierarchy', [TeamController::class, 'hierarchy'])->name('team.hierarchy');
 
-    // Projects CRUD
-    Route::get('/projects/create', [ProjectsController::class, 'create'])->name('projects.create');
-    Route::post('/projects', [ProjectsController::class, 'store'])->name('projects.store');
-    Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
-    Route::put('/projects/{id}', [ProjectsController::class, 'update'])->name('projects.update');
-    Route::delete('/projects/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
 
     // HomepageContent CRUD
     Route::get('/homepage-content', [HomepageController::class, 'contentIndex'])->name('homepage-content.index');
@@ -48,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('innovation', InnovationController::class);
     // Events CRUD
     Route::resource('events', EventController::class);
+    // Projects CRUD
+    Route::resource('projects', ProjectsController::class);
     // Resources CRUD
     Route::resource('resources', ResourceController::class);
     // Blog CRUD
@@ -59,9 +55,6 @@ Route::middleware('auth')->group(function () {
 // Homepage
 Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
-// Projects
-Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index');
-Route::get('/projects/{id}', [ProjectsController::class, 'show'])->name('projects.show');
 
 // Teams
 Route::get('/teams', [TeamController::class, 'index'])->name('teams.index');
@@ -81,10 +74,5 @@ Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show'
 // Innovation Hub
 Route::get('/innovation', [InnovationController::class, 'index'])->name('innovation.index');
 Route::get('/innovation/{id}', [InnovationController::class, 'show'])->name('innovation.show');
-
-// Feedback
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
-Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
-Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 require __DIR__ . '/auth.php';
