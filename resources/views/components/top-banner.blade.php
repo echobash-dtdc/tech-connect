@@ -1,5 +1,6 @@
+{{-- top-banner.blade.php --}}
 <div class="bg-white py-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <img src="https://www.dtdc.in/img/logos/logo.png" alt="DTDC Logo" class="h-10">
 
         <nav class="flex flex-wrap justify-center md:justify-end gap-3">
@@ -15,6 +16,12 @@
     </div>
 </div>
 
-<div class="w-full">
-    <img src="https://www.dtdc.in/img/slides/FourthBanner.jpg" alt="Banner" class="w-full h-auto">
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+        <img 
+            src="https://www.dtdc.in/img/slides/FourthBanner.jpg" 
+            alt="Banner" 
+            class="w-full h-44 object-cover rounded-md shadow"
+        >
+    </div>
 </div>

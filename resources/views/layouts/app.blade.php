@@ -36,10 +36,8 @@
                         </header>
                     @endisset
 
-                    <main class="p-6">
-                        <div class="max-w-7xl mx-auto px-4">
-                            @yield('content')
-                        </div>
+                    <main class="max-w-7xl mx-auto px-4 py-6">
+                        @yield('content')
                     </main>
                 </div>
             </div>
