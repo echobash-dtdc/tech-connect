@@ -22,7 +22,6 @@
             <!-- Sidebar + Main Content -->
             <div class="flex flex-1">
                 <!-- Sidebar -->
-                @include('layouts.sidebar')
 
                 <!-- Main Page -->
                 <div class="flex-1">

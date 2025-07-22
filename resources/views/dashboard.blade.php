@@ -2,30 +2,7 @@
 
 @section('content')
 <div class="w-full">
-
-    {{-- Top Logo & Navigation --}}
-    <div class="bg-white py-6 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <img src="https://www.dtdc.in/img/logos/logo.png" alt="DTDC Logo" class="h-10">
-
-            <nav class="flex flex-wrap justify-center md:justify-end gap-3">
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Home</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Our Team</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Org Structure</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Blog</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Events</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Resources</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Projects</a>
-                <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Feedback</a>
-            </nav>
-        </div>
-    </div>
-
-    {{-- Banner Image --}}
-    <div class="w-full">
-        <img src="https://www.dtdc.in/img/slides/FourthBanner.jpg" alt="Banner" class="w-full h-auto">
-    </div>
-
+    <x-top-banner />
     {{-- Welcome + News --}}
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 px-4">
         <div class="bg-blue-900 text-white text-center py-6 rounded">
