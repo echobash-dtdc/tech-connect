@@ -1,3 +1,5 @@
+// resources/views/components/markdown-editor.blade.php
+
 @props(['name', 'value' => ''])
 
 <div>
@@ -15,21 +17,21 @@
         <script src="https://cdn.jsdelivr.net/npm/turndown/dist/turndown.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const textarea = document.getElementById(@json($name));
-                if (textarea) {
-                    const easyMDE = new EasyMDE({ element: textarea });
-                    const turndownService = new TurndownService();
-
-                    easyMDE.codemirror.on("paste", (cm, event) => {
-                        const clipboardData = event.clipboardData || window.clipboardData;
-                        const html = clipboardData.getData('text/html');
-                        if (html) {
-                            event.preventDefault();
-                            const markdown = turndownService.turndown(html);
-                            cm.replaceSelection(markdown);
-                        }
-                    });
-                }
+                document.querySelectorAll('textarea').forEach(function (textarea) {
+                    if (textarea.id && textarea.closest('form')) {
+                        const easyMDE = new EasyMDE({ element: textarea });
+                        const turndownService = new TurndownService();
+                        easyMDE.codemirror.on("paste", (cm, event) => {
+                            const clipboardData = event.clipboardData || window.clipboardData;
+                            const html = clipboardData.getData('text/html');
+                            if (html) {
+                                event.preventDefault();
+                                const markdown = turndownService.turndown(html);
+                                cm.replaceSelection(markdown);
+                            }
+                        });
+                    }
+                });
             });
         </script>
     @endpush

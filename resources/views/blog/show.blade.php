@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mx-auto py-10">
-    <div class="bg-white p-12 rounded-2xl shadow-xl flex flex-col items-center text-center max-w-5xl mx-auto">
+    <div class="bg-white p-12 rounded-2xl shadow-xl flex flex-col items-center text-center  mx-auto">
         <h1 class="text-4xl font-extrabold mb-6 text-gray-800">{{ $post->title }}</h1>
 
         <div class="flex flex-wrap justify-center gap-4 mb-6">
