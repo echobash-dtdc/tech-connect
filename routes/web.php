@@ -73,9 +73,4 @@ Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show'
 Route::get('/innovation', [InnovationController::class, 'index'])->name('innovation.index');
 Route::get('/innovation/{id}', [InnovationController::class, 'show'])->name('innovation.show');
 
-// Feedback
-Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
-Route::get('/feedback/create', [FeedbackController::class, 'create'])->name('feedback.create');
-Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
-
 require __DIR__.'/auth.php';

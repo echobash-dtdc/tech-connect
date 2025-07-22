@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mx-auto px-4 py-6">
     <h1 class="text-2xl font-bold mb-4">Feedback</h1>
-    <a href="{{ route('feedback.create') }}" class="inline-block mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Submit Feedback</a>
+    <a href="{{ route('feedback.create') }}" class="inline-block mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Add Feedback</a>
     <div class="overflow-x-auto">
         <table class="min-w-full bg-white border border-gray-200 rounded shadow">
             <thead class="bg-gray-100">
