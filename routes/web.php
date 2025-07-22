@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/team/get-teams/{departmentId}', [TeamController::class, 'getTeams']);
+    Route::get('/team/hierarchy', [TeamController::class, 'hierarchy'])->name('team.hierarchy');
 
 
     // HomepageContent CRUD
@@ -73,4 +75,4 @@ Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show'
 Route::get('/innovation', [InnovationController::class, 'index'])->name('innovation.index');
 Route::get('/innovation/{id}', [InnovationController::class, 'show'])->name('innovation.show');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
