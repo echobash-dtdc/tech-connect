@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class BlogController extends Controller
 {
@@ -11,6 +12,18 @@ class BlogController extends Controller
     {
         $posts = BlogPost::orderBy('publish_date', 'desc')->paginate(10);
         return view('blog.index', compact('posts'));
+    }
+
+    public function getBlogs() {
+        // Fix the get line to properly chain withHeaders before get
+        $response = Http::withHeaders([
+            'Authorization' => sprintf("Token %s", ENV('BASEROW_DB_TOKEN'))
+        ])->get('https://resolved-silkworm-eminent.ngrok-free.app/api/database/rows/table/777/?user_field_names=true');
+
+        if ($response->failed()) {
+            return response()->json(['error' => 'Failed to fetch blogs'], 500);
+        }
+        return response()->json($response->json());
     }
 
     public function show($id)
