@@ -20,10 +20,9 @@ class BlogController extends Controller
             'Authorization' => sprintf("Token %s", ENV('BASEROW_DB_TOKEN'))
         ])->get('https://resolved-silkworm-eminent.ngrok-free.app/api/database/rows/table/777/?user_field_names=true');
 
-        if ($response->failed()) {
-            return response()->json(['error' => 'Failed to fetch blogs'], 500);
-        }
-        return response()->json($response->json());
+        $blogs = $response->json();
+
+        return view('blog.blogs', compact('blogs'));
     }
 
     public function show($id)

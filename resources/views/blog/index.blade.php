@@ -16,23 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($posts as $post)
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-4 py-2 border-b">{{ $post->id }}</td>
-                        <td class="px-4 py-2 border-b">{{ $post->title }}</td>
-                        <td class="px-4 py-2 border-b">{{ $post->author_id }}</td>
-                        <td class="px-4 py-2 border-b">{{ $post->status }}</td>
-                        <td class="px-4 py-2 border-b space-x-2">
-                            <a href="{{ route('blog.show', $post->id) }}" class="inline-block px-3 py-1 bg-gray-200 text-gray-800 rounded hover:bg-gray-300">View</a>
-                            <a href="{{ route('blog.edit', $post->id) }}" class="inline-block px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-700">Edit</a>
-                            <form action="{{ route('blog.destroy', $post->id) }}" method="POST" class="inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="inline-block px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700" onclick="return confirm('Are you sure?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
+                
             </tbody>
         </table>
     </div>
